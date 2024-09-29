@@ -1,0 +1,21 @@
+@startuml Fazer Login
+skinparam Style strictuml
+hide empty members
+
+mainframe "Diagrama de sequência - Acessar Feed"
+
+actor Usuario
+
+participant ":TelaInicial" as TelaInicial
+participant ":Usuario" as UsuarioClasse
+participant ":Evento" as Evento
+
+Usuario -> TelaInicial : acessaTelaInicial()
+loop para todos os eventos
+  TelaInicial -> Evento: getEvento()
+  Evento --> TelaInicial
+end
+
+TelaInicial --> Usuario
+
+@enduml

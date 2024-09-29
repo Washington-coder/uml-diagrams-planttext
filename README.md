@@ -15,3 +15,7 @@
 ### login.txt
 
 ![login.txt](uml-images/login.txt)
+
+### acessa feed (exemplo de loop)
+
+![acessar-feed.txt](uml-images/acessa-feed.png)
