@@ -1,0 +1,18 @@
+@startuml Fazer Cadastro
+skinparam Style strictuml 
+hide empty members
+
+mainframe "Diagrama de sequência - Fazer cadastro"
+
+actor Usuario
+
+participant ":TelaCadastro" as TelaCadastro
+
+Usuario -> TelaCadastro : preencheDados()
+Usuario -> TelaCadastro : clickEnviarDados(dados)
+TelaCadastro -> TelaCadastro : verificarDados(dados)
+
+create "novoUsuario:Usuario" as novoUsuario
+TelaCadastro -> novoUsuario : [verificarDados = True] createUsuario()
+
+@enduml

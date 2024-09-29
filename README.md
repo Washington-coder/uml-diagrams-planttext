@@ -19,3 +19,7 @@
 ### acessa feed (exemplo de loop)
 
 ![acessar-feed.txt](uml-images/acessa-feed.png)
+
+### fazer cadastro (exemplo de create)
+
+![fazer-cadastro.txt](uml-images/fazer-cadastro.png)
