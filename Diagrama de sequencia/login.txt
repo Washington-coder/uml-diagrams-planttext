@@ -1,0 +1,20 @@
+@startuml Fazer Login
+skinparam Style strictuml
+hide empty members
+
+mainframe "Diagrama de sequência - Fazer login"
+
+actor Usuario
+participant ":TelaLogin" as TelaLogin
+participant ":TelaInicial" as TelaInicial
+participant ":Usuario" as UsuarioClasse
+
+Usuario -> TelaLogin : preencheDados(dados)
+TelaLogin -> UsuarioClasse : checkUsuario(dados)
+UsuarioClasse --> TelaLogin
+TelaLogin --> Usuario : [checkUsuario = False] exibirLoginInvalido()
+TelaLogin -> TelaInicial : [checkUsuario = True] acessaHome()
+TelaInicial --> TelaLogin
+TelaLogin --> Usuario
+
+@enduml
