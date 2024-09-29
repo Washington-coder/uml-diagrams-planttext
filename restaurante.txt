@@ -1,0 +1,53 @@
+@startuml 
+
+title "Diagrama de classes - Restaurante"
+
+skinparam Style strictuml /
+hide empty members
+
+mainframe "Diagrame de classe - Restaurante"
+
+class Cliente {
+  nome: string
+  cpf: string
+}
+
+class Pedido {
+  data: date
+  status: string
+}
+
+class DetalhePedido {
+  quantidade: int
+  taxa: float
+}
+
+class Pagamento {
+  valorTotal: float
+}
+
+class Item {
+  nome: string
+  preco: float
+}
+
+class Dinheiro {
+  taxaDinheiro: float
+}
+
+class Cartao {
+  nome: string
+  type: string
+  expDate: date
+}
+
+Cliente "1" -- "0..*" Pedido
+Pedido "1" o-- "1..*" DetalhePedido
+Pedido "1" -- "1..*" Pagamento
+DetalhePedido "0..*" -- "1" Item
+Pagamento <|-- Dinheiro
+Pagamento <|-- Cartao
+
+
+
+@enduml

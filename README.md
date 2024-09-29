@@ -6,4 +6,4 @@
 
 ## restaurante.txt
 
-![restaurante.txt](uml-images/universidade.png)
+![restaurante.txt](uml-images/restaurante.png)
