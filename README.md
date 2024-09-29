@@ -27,3 +27,7 @@
 ### deletar conta (exemplo de destroy)
 
 ![deletar-usuario.txt](uml-images/deletar-conta.png)
+
+### comprar ingresso
+
+![comprar-ingresso.txt](uml-images/comprar-ingresso.png)

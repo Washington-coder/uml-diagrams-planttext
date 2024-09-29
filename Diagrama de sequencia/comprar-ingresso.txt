@@ -1,0 +1,37 @@
+@startuml
+skinparam Style strictuml
+hide empty members
+
+mainframe "Diagrama de Sequência - Comprar Ingresso"
+
+actor Usuario
+
+participant ":TelaCompra" as TelaCompra
+
+Usuario -> TelaCompra: inserirDadosCompra()
+TelaCompra --> Usuario: confirmarDados()
+Usuario -> TelaCompra: clickConfirmar()
+
+create "novaCompra:Compra" as novaCompra
+TelaCompra -> novaCompra: criarCompra()
+
+novaCompra -> novaCompra: validarCompra()
+
+alt validarCompra = True
+
+  loop para cada ingresso da compra
+    create "novoIngresso:Ingresso" as novoIngresso
+    novaCompra -> novoIngresso: criarIngresso()
+  end
+  
+else validarCompra = False
+  
+  novaCompra -> novaCompra
+  destroy novaCompra
+  
+  novaCompra --> TelaCompra
+  
+  TelaCompra --> Usuario: erroNaCompra()
+
+end
+@enduml
