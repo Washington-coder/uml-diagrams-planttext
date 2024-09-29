@@ -1,0 +1,35 @@
+@startuml 
+
+title Universidade-Classes
+
+skinparam Style strictuml /
+hide empty members
+
+mainframe "Diagrama de classe - Universidade-Classe"
+
+class "Usuário" as User {
+  matricula: int
+  senha: string
+}
+
+class Aluno {
+  data_matricula: date
+  data_formatura: date
+}
+
+class Curso {
+  codigo: string
+  nome: string
+}
+
+class Disciplina {
+  codigo: string
+  nome: string
+  periodo: int
+}
+
+Aluno "0..*" -- "1..*" Curso: relacao >
+User <|-- Aluno /'herança'/
+Curso o-- Disciplina /'agregaçao'/
+
+@enduml
