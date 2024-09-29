@@ -1,0 +1,23 @@
+@startuml Deletar Conta
+skinparam Style strictuml
+hide empty members
+
+mainframe "Diagrama de Sequência - Deletar Conta"
+
+actor Usuario 
+
+participant ":TelaPerfil" as TelaPerfil
+participant ":Usuario" as UsuarioClasse
+participant ":usuarioAtual:Usuario" as usuarioAtual
+
+Usuario -> TelaPerfil : clickDeletarConta()
+TelaPerfil --> Usuario : confirmarAcao()
+Usuario -> TelaPerfil : clickConfirmar()
+
+TelaPerfil -> UsuarioClasse : getUsuario(dados)
+UsuarioClasse --> TelaPerfil
+
+TelaPerfil -> usuarioAtual : deletarUsuario()
+destroy usuarioAtual
+
+@enduml

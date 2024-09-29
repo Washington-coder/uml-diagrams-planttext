@@ -23,3 +23,7 @@
 ### fazer cadastro (exemplo de create)
 
 ![fazer-cadastro.txt](uml-images/fazer-cadastro.png)
+
+### deletar conta (exemplo de destroy)
+
+![deletar-usuario.txt](uml-images/deletar-conta.png)
